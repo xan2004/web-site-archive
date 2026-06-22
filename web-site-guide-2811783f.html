@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>开云 · 信息索引站</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background-color: #f4f5f7;
+            color: #1e2025;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .hero {
+            background: linear-gradient(145deg, #0c0f1a 0%, #1f2330 100%);
+            color: #eaeef2;
+            padding: 3.5rem 1.5rem 3rem;
+            text-align: center;
+            border-bottom: 1px solid #2f3542;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 500;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.6rem;
+        }
+
+        .hero .sub {
+            font-size: 1.1rem;
+            color: #a4adc0;
+            max-width: 640px;
+            margin: 0.4rem auto 0;
+            font-weight: 350;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2.5rem 1.5rem 3.5rem;
+            flex: 1;
+        }
+
+        .intro-block {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03), 0 2px 4px rgba(0, 0, 0, 0.02);
+            padding: 2rem 2.2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .intro-block p {
+            font-size: 1.05rem;
+            color: #2a2d34;
+            margin-bottom: 0.8rem;
+        }
+
+        .intro-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.8rem;
+            margin: 2.5rem 0;
+        }
+
+        .card {
+            background: white;
+            border-radius: 18px;
+            padding: 1.8rem 1.6rem;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.03);
+            transition: transform 0.15s ease, box-shadow 0.2s ease;
+            border: 1px solid #eff0f3;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.04);
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            font-weight: 550;
+            margin-bottom: 0.7rem;
+            color: #191c23;
+            letter-spacing: -0.01em;
+        }
+
+        .card p {
+            font-size: 0.98rem;
+            color: #3f444e;
+            line-height: 1.55;
+        }
+
+        .link-highlight {
+            background: white;
+            border-radius: 18px;
+            padding: 1.6rem 2rem;
+            margin: 1.8rem 0 2.2rem;
+            border-left: 4px solid #2b7e6b;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+        }
+
+        .link-highlight a {
+            color: #1d735e;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s, color 0.15s;
+        }
+
+        .link-highlight a:hover {
+            border-bottom-color: #1d735e;
+            color: #124b3e;
+        }
+
+        .faq-summary {
+            background: white;
+            border-radius: 18px;
+            padding: 1.6rem 2rem;
+            margin-top: 2rem;
+        }
+
+        .faq-summary details {
+            margin-bottom: 0.8rem;
+            border-bottom: 1px solid #e6e8ec;
+            padding-bottom: 0.8rem;
+        }
+
+        .faq-summary details:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-summary summary {
+            font-weight: 500;
+            font-size: 1rem;
+            cursor: pointer;
+            color: #1f232b;
+            padding: 0.3rem 0;
+        }
+
+        .faq-summary summary::-webkit-details-marker {
+            color: #2b7e6b;
+        }
+
+        .faq-summary .answer {
+            padding: 0.6rem 0 0.2rem 0.6rem;
+            color: #3d434f;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.8rem 1.5rem;
+            font-size: 0.85rem;
+            color: #6b7280;
+            border-top: 1px solid #e2e5ea;
+            background: white;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero {
+                padding: 2.4rem 1.2rem 2rem;
+            }
+            .container {
+                padding: 1.8rem 1rem 2.8rem;
+            }
+            .intro-block {
+                padding: 1.5rem 1.2rem;
+            }
+            .card {
+                padding: 1.4rem 1.2rem;
+            }
+            .link-highlight, .faq-summary {
+                padding: 1.2rem 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<section class="hero">
+    <h1>开云 · 信息整理</h1>
+    <div class="sub">围绕品牌、资料、使用场景的结构化索引 · 简洁非商业</div>
+</section>
+
+<div class="container">
+
+    <div class="intro-block">
+        <p>本页将围绕<a href="https://web-site-kering.com">开云</a>相关的内容方向做一次卡片式信息梳理。不涉及推广或投资建议，只从资料整理和索引便利的角度，列举常见用途、适合人群以及关键链接段落。以下内容多来自公开资料与用户场景归纳，供参考比对。</p>
+        <p>如果你正在寻找特定功能或想了解框架用途，可以快速浏览下方卡片。每个卡片都标注了典型特征或使用模式，帮助你判断是否与自己的需求匹配。</p>
+    </div>
+
+    <div class="cards-grid">
+        <div class="card">
+            <h3>资料聚合卡片</h3>
+            <p>汇集文档、版本说明、常见配置条目，适合需要快速查阅基础信息的用户。内容侧重点在于条目结构清晰，减少跳转成本。</p>
+        </div>
+        <div class="card">
+            <h3>场景索引卡片</h3>
+            <p>按实际使用场景拆分：个人整理、轻量展示、团队协作参考。每种场景附带简要的前置条件与适用规模。</p>
+        </div>
+        <div class="card">
+            <h3>人群适配卡片</h3>
+            <p>面向内容创作者、技术文档维护者、信息管理初学者。不同人群关注的功能模块存在明显差异，本卡片做了区分提示。</p>
+        </div>
+        <div class="card">
+            <h3>链接与延伸</h3>
+            <p>包含指向主要站点的入口——<a href="https://web-site-kering.com" style="color:#1d735e; text-decoration:underline;">开云</a>，以及相关社区或存档页的简要说明。链接均基于公开信息整理。</p>
+        </div>
+    </div>
+
+    <div class="link-highlight">
+        <p>📎 核心索引节点：<a href="https://web-site-kering.com">开云</a> —— 该站点作为资料主站，聚合了版本动态、配置示例与接口概述。如果你正在寻找起点，可以从这里展开浏览。</p>
+    </div>
+
+    <div class="faq-summary">
+        <details>
+            <summary>「开云」主要涵盖什么内容？</summary>
+            <div class="answer">根据公开信息，该站点主要提供与品牌、系统或框架相关的文档索引、更新日志与部分使用示例。不包含交易、金融或会员专属内容，倾向于信息展示与参考。</div>
+        </details>
+        <details>
+            <summary>卡片中的“人群适配”是什么意思？</summary>
+            <div class="answer">指不同背景的用户（如初学者、有经验的整理者、团队协作需求者）在查阅资料时，可能关注不同的模块。卡片尝试标注这些差异，但没有推荐倾向。</div>
+        </details>
+        <details>
+            <summary>是否有离线或非网页版本？</summary>
+            <div class="answer">本页仅为静态信息梳理，不提供离线包。主站 <a href="https://web-site-kering.com" style="color:#1d735e;">开云</a> 为在线形式，建议以网络浏览为准。</div>
+        </details>
+    </div>
+
+</div>
+
+<footer>
+    <span>静态信息索引 · 内容基于公开资料整理</span>
+</footer>
+
+</body>
+</html>
